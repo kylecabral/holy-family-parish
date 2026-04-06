@@ -179,9 +179,31 @@ if (animateElements.length > 0) {
 
 // Slideshow functionality
 const slides = document.querySelectorAll('.slide');
-const indicators = document.querySelectorAll('.indicator');
+const slideIndicatorsContainer = document.getElementById('slide-indicators');
+let indicators = [];
 let currentSlide = 0;
 let slideInterval;
+
+// Dynamically create slide indicators
+function createSlideIndicators() {
+    if (!slideIndicatorsContainer || slides.length === 0) return;
+
+    slideIndicatorsContainer.innerHTML = '';
+    indicators = [];
+
+    for (let i = 0; i < slides.length; i++) {
+        const indicator = document.createElement('span');
+        indicator.className = 'indicator' + (i === 0 ? ' active' : '');
+        indicator.dataset.slide = i;
+        indicator.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            showSlide(i);
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+        slideIndicatorsContainer.appendChild(indicator);
+        indicators.push(indicator);
+    }
+}
 
 function showSlide(index) {
     // Wrap around
@@ -207,6 +229,7 @@ function nextSlide() {
 }
 
 function startSlideshow() {
+    createSlideIndicators();
     if (slides.length > 0) {
         // Show first slide
         showSlide(0);
@@ -214,15 +237,6 @@ function startSlideshow() {
         slideInterval = setInterval(nextSlide, 5000);
     }
 }
-
-// Click handlers for indicators
-indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-        clearInterval(slideInterval);
-        showSlide(index);
-        slideInterval = setInterval(nextSlide, 5000);
-    });
-});
 
 // Start slideshow on page load
 startSlideshow();
