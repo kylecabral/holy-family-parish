@@ -12,9 +12,10 @@ let footerHTML = fs.readFileSync(footerPath, 'utf8');
 
 // Footer for pages directory:
 // - Links to index.html need ../ prefix
-// - Links to pages/*.html stay as-is (same directory)
+// - Links to pages/*.html need pages/ stripped (same directory)
 const footerPagesHTML = footerHTML
-    .replace(/href="index\.html/g, 'href="../index.html');
+    .replace(/href="index\.html/g, 'href="../index.html')
+    .replace(/href="pages\//g, 'href="');
 
 // Update index.html (in root)
 const indexPath = path.join(__dirname, 'index.html');
