@@ -1659,42 +1659,72 @@ blockquote cite {
 }
 
 /* Ministry Sections */
-.ministry-grid {
+.section-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-2xl);
     align-items: center;
 }
 
-.ministry-grid.reverse {
+.section-grid.reverse {
     direction: rtl;
 }
 
-.ministry-grid.reverse > * {
+.section-grid.reverse > * {
     direction: ltr;
 }
 
-.ministry-image {
+/* Ministry Media Section - supports both images and videos */
+.section-media,
+.section-media {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.ministry-image img {
+.section-media img {
     width: 300px;
     height: 300px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.ministry-content h2 {
+.section-media.rectangular img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 16/9;
+    border-radius: var(--radius-md);
+}
+
+/* Video embed container */
+.section-video {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.section-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--radius-md);
+}
+
+.section-content h2 {
     font-family: var(--font-display);
     font-size: 2rem;
     color: var(--color-primary);
     margin-bottom: var(--space-md);
 }
 
-.ministry-content h3 {
+.section-content h3 {
     font-family: var(--font-display);
     font-size: 1.25rem;
     color: var(--color-text);
@@ -1702,22 +1732,22 @@ blockquote cite {
     margin-bottom: var(--space-sm);
 }
 
-.ministry-content p {
+.section-content p {
     color: var(--color-text-light);
     line-height: 1.7;
 }
 
-.ministry-list {
+.section-list {
     list-style: disc;
     padding-left: var(--space-xl);
     color: var(--color-text-light);
 }
 
-.ministry-list li {
+.section-list li {
     margin-bottom: var(--space-sm);
 }
 
-.ministry-news {
+.section-news {
     background-color: var(--color-bg-alt);
     padding: var(--space-lg);
     border-radius: var(--radius-md);
@@ -1725,7 +1755,7 @@ blockquote cite {
     margin-bottom: var(--space-lg);
 }
 
-.ministry-news h3 {
+.section-news h3 {
     margin-top: 0;
 }
 
@@ -1767,7 +1797,7 @@ blockquote cite {
     font-size: 0.9rem;
 }
 
-.ministry-quote {
+.section-quote {
     background-color: var(--color-bg-alt);
     padding: var(--space-lg);
     border-radius: var(--radius-md);
@@ -1775,7 +1805,7 @@ blockquote cite {
     margin-top: var(--space-xl);
 }
 
-.ministry-quote cite {
+.section-quote cite {
     display: block;
     text-align: right;
     font-style: normal;
@@ -2215,13 +2245,13 @@ blockquote cite {
         gap: var(--space-xl);
     }
 
-    .ministry-grid,
-    .ministry-grid.reverse {
+    .section-grid,
+    .section-grid.reverse {
         grid-template-columns: 1fr;
         direction: ltr;
     }
 
-    .ministry-image {
+    .section-media {
         order: -1;
     }
 
