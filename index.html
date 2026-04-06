@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Family Parish</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content container">
+            <h1>Welcome to Holy Family Parish</h1>
+            <p class="hero-subtitle">372 Middleboro Ave, East Taunton, MA &bull; Diocese of Fall River</p>
+            <div class="hero-cta">
+                <a href="#mass-times" class="btn btn-primary">Mass Times</a>
+                <a href="pages/im-new.html" class="btn btn-secondary">I'm New</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#home" class="logo">
+                <span class="logo-icon">&#10013;</span>
+                <span class="logo-text">Holy Family Parish</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="pages/im-new.html">I'm New</a></li>
+                <li><a href="#mass-times">Mass Times</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#go-deeper">Go Deeper</a></li>
+                <li><a href="pages/sacraments.html">Sacraments</a></li>
+                <li><a href="pages/ministries.html">Ministries</a></li>
+                <li><a href="pages/bulletins.html">Bulletins</a></li>
+                <li><a href="#give">Give</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Slideshow Section -->
+    <section class="slideshow">
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="images/20191124_083239.jpg" alt="Holy Family Parish">
+            </div>
+            <div class="slide">
+                <img src="images/20200207_115126.jpg" alt="Holy Family Parish">
+            </div>
+            <div class="slide">
+                <img src="images/20200411_192443.jpg" alt="Holy Family Parish">
+            </div>
+        </div>
+        <div class="slide-indicators">
+            <span class="indicator" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section class="announcements section">
+        <div class="container">
+            <h2 class="section-title">Announcements</h2>
+            <div class="announcements-carousel">
+                <button class="announcement-nav prev" id="announcement-prev">&lsaquo;</button>
+                <div class="announcements-track-container">
+                    <div class="announcements-track" id="announcements-track">
+                        <div class="announcement-card">
+                            <div class="announcement-content">
+                                <h3>Prayer Shawl</h3>
+                                <p>The Prayer Shawl Ministry is seeking those interested in making shawls and lap robes. Ministry members are present the second Wednesday of each month from 1-2:30pm at the parish center and will assist anyone who needs help with their project. Attendance at the meeting is not required. Information regarding the ministry is available at the entrances to the church and at the parish center and are written in both English and Spanish.</p>
+                            </div>
+                        </div>
+                        <div class="announcement-card">
+                            <div class="announcement-content">
+                                <h3>Date Change!</h3>
+                                <p>Attention Seniors! Our own Joyce Frechette has offered to teach a Free Watercolor Painting Class open to all of our Senior Citizens. Class will be held on April 17th in the Parish center from 1:00 to 2:30 PM. Please bring your own supplies: watercolor paint palette, brushes and paper. Space is limited. Please contact Therese at the parish office to sign up.</p>
+                            </div>
+                        </div>
+                        <div class="announcement-card">
+                            <div class="announcement-content">
+                                <h3>St. Vincent de Paul</h3>
+                                <p>St. Vincent de Paul could use your help in stocking the Food Pantry with cleaning & hygiene products:
+· Dish Soap
+· Laundry Detergent Dryer Sheets
+· Shampoo & Conditioner
+Please drop off your donations to either the church or the parish center. Thank you for your generosity, which directly helps our local East Taunton neighbors in need.</p>
+                            </div>
+                        </div>
+                        <div class="announcement-card">
+                            <div class="announcement-content">
+                                <h3>Our Lady of Lourdes School</h3>
+                                <p>Our Lady of Lourdes School is seeking a dedicated Assistant for our before and after school care programs. This part-time role offers the chance to positively impact children's lives by ensuring a safe, nurturing environment where they can learn and play. Ideal candidates will have good communication skills, a passion for working with young students from PreK3 - 8th grade, and a commitment to an inclusive atmosphere. If you're interested and want to join a supportive community, we encourage you to email, mturner@ololtaunton.com</p>
+                            </div>
+                        </div>
+                        <div class="announcement-card">
+                            <div class="announcement-content">
+                                <h3>St Anthony's Parish in Taunton</h3>
+                                <p>St Anthony's Parish in Taunton sponsors a Mass for the Haitian Community of Greater Taunton on every Sunday at 6pm. St. Anthony is located at 126 School St., but use the parking lot on Washburn St. Please note the change in the day to Sunday which requires a change in location to St. Anthony's.
+Fr. Larose of the Haitian Parish, Brockton will celebrate the Mass in both French and Haitian Creole. The Mass will be followed by a gathering in the Hall. If you are able, please spread the word to the Haitian community of Greater Taunton.
+When: Every Sunday at 6:00 PM
+Where: St. Anthony's Parish - 126 School Street, Taunton (parking lot on Washburn St.)
+Who: Father Larose
+Language: French and Haitian Creole</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="announcement-nav next" id="announcement-next">&rsaquo;</button>
+            </div>
+            <div class="announcements-indicators" id="announcements-indicators">
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Modal -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-header">
+                <span class="modal-date" id="modal-date"></span>
+                <h2 id="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-time" id="modal-time"></p>
+                <p class="modal-description" id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mass Times Section -->
+    <section id="mass-times" class="services section">
+        <div class="container">
+            <h2 class="section-title">Mass Times</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-day">Saturday Vigil</div>
+                    <div class="service-time">4:00 PM</div>
+                    <div class="service-name">Vigil Mass</div>
+                    <p>Sunday obligation fulfilled</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-day">Sunday</div>
+                    <div class="service-time">7:30 AM</div>
+                    <div class="service-name">Morning Mass</div>
+                    <p>English</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-day">Sunday</div>
+                    <div class="service-time">9:00 AM</div>
+                    <div class="service-name">Mass</div>
+                    <p>English</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-day">Sunday</div>
+                    <div class="service-time">10:30 AM</div>
+                    <div class="service-name">Mass</div>
+                    <p>English</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-day">Sunday</div>
+                    <div class="service-time">12:30 PM</div>
+                    <div class="service-name">Misa en Español</div>
+                    <p>Spanish Mass</p>
+                </div>
+            </div>
+            <div class="daily-mass">
+                <h3>Daily Mass</h3>
+                <p>Monday - Friday: 8:00 AM &bull; Saturday: 8:00 AM</p>
+            </div>
+            <div class="confession-times">
+                <h3>Confession</h3>
+                <p>Monday: 4:00 PM - 5:00 PM</p>
+                <p>Thursday &amp; Saturday: After morning Mass</p>
+                <p>Saturday: 3:00 PM - 3:45 PM</p>
+            </div>
+            <div class="adoration-times">
+                <h3>Eucharistic Adoration</h3>
+                <p>Monday - Friday: 11:00 AM - 8:00 PM (Parish Center Chapel)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events section section-alt">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="events-list">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="event-month">APR</span>
+                            <span class="event-day">06</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>First Friday Adoration</h3>
+                            <p class="event-time">9:00 AM - 12:00 PM</p>
+                            <p>Join us for Eucharistic Adoration following the 8:00 AM Mass.</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="event-month">APR</span>
+                            <span class="event-day">12</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Parish Fish Fry</h3>
+                            <p class="event-time">5:00 PM - 7:30 PM</p>
+                            <p>Join us in the parish hall for our monthly community fish fry. All are welcome!</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="event-month">APR</span>
+                            <span class="event-day">19</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Religious Education Registration</h3>
+                            <p class="event-time">After all Masses</p>
+                            <p>Register children for fall Religious Education classes in the parish hall.</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="event-month">APR</span>
+                            <span class="event-day">27</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Knights of Columbus Breakfast</h3>
+                            <p class="event-time">8:00 AM - 11:00 AM</p>
+                            <p>Support our parish ministries while enjoying a delicious breakfast. Free will offering.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar-container">
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <button class="calendar-nav" id="prev-month">&laquo;</button>
+                            <h3 id="calendar-month-year">April 2026</h3>
+                            <button class="calendar-nav" id="next-month">&raquo;</button>
+                        </div>
+                        <div class="calendar-weekdays">
+                            <span>Sun</span>
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                        </div>
+                        <div class="calendar-days" id="calendar-days">
+                            <!-- Days will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Go Deeper Section -->
+    <section id="go-deeper" class="go-deeper-section section">
+        <div class="container">
+            <h2 class="section-title">Go Deeper</h2>
+            <p class="section-subtitle">Grow in your faith and deepen your relationship with Christ</p>
+            <div class="go-deeper-grid">
+                <a href="pages/go-deeper.html#formed" class="go-deeper-card">
+                    <h3>FORMED</h3>
+                    <p>Access Catholic movies, programs, audio, and e-books through our parish subscription. Great for families, couples, and small groups.</p>
+                </a>
+                <a href="pages/go-deeper.html#hfmen" class="go-deeper-card">
+                    <h3>HFMen</h3>
+                    <p>Men's group meeting Thursday nights for faith, fellowship, and discussion. Monthly trips to Holy Cross Family Ministries.</p>
+                </a>
+                <a href="pages/go-deeper.html#womens-bible-study" class="go-deeper-card">
+                    <h3>Women's Bible Study</h3>
+                    <p>Weekly Scripture study and discussion for women of all ages. Grow in faith through fellowship and prayer.</p>
+                </a>
+                <a href="pages/go-deeper.html#rcia" class="go-deeper-card">
+                    <h3>RCIA</h3>
+                    <p>Rite of Christian Initiation for Adults interested in becoming Catholic. Weekly classes begin each fall.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Give Section -->
+    <section id="give" class="give section section-alt">
+        <div class="container">
+            <h2 class="section-title">Online Giving</h2>
+            <div class="give-content">
+                <div class="give-text">
+                    <p>Your generosity supports our parish ministries, maintenance of our church, and our outreach to those in need. Thank you for your faithful stewardship.</p>
+                    <blockquote>
+                        "Each must do as already determined, without sadness or compulsion, for God loves a cheerful giver."
+                        <cite>— 2 Corinthians 9:7</cite>
+                    </blockquote>
+                    <p>We also accept donations through <strong>electronic giving</strong> for convenient, automatic contributions.</p>
+                </div>
+                <div class="give-form">
+                    <div class="donation-amounts">
+                        <button class="amount-btn" data-amount="25">$25</button>
+                        <button class="amount-btn" data-amount="50">$50</button>
+                        <button class="amount-btn" data-amount="100">$100</button>
+                        <button class="amount-btn" data-amount="250">$250</button>
+                    </div>
+                    <div class="custom-amount">
+                        <label for="custom-amount">Or enter a custom amount:</label>
+                        <div class="input-group">
+                            <span class="input-prefix">$</span>
+                            <input type="number" id="custom-amount" placeholder="0.00" min="1">
+                        </div>
+                    </div>
+                    <div class="donation-type">
+                        <label for="donation-type">Designate your gift:</label>
+                        <select id="donation-type">
+                            <option value="sunday">Sunday Collection</option>
+                            <option value="building">Building & Maintenance</option>
+                            <option value="religious-ed">Religious Education</option>
+                            <option value="outreach">Parish Outreach</option>
+                            <option value="music">Music Ministry</option>
+                            <option value="special">Special Intention</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary btn-full">Continue to Give</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">&#128134;</div>
+                        <div>
+                            <h4>Holy Family Church</h4>
+                            <p>372 Middleboro Avenue<br>East Taunton, MA 02718</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">&#127968;</div>
+                        <div>
+                            <h4>Parish Center</h4>
+                            <p>P.O. Box 619<br>East Taunton, MA 02718</p>
+                            <p class="contact-phone">(508) 824-5707</p>
+                            <p class="contact-detail">438 Middleboro Ave, East Taunton, MA</p>
+                            <p class="contact-hours">Office: Mon–Fri 8:30 a.m.–2:30 p.m.</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">&#127968;</div>
+                        <div>
+                            <h4>Holy Family Rectory</h4>
+                            <p>370 Middleboro Ave<br>East Taunton, MA 02718</p>
+                            <p class="contact-phone">(508) 824-5665</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="general">General Inquiry</option>
+                            <option value="prayer">Prayer Request</option>
+                            <option value="sacrament">Sacrament Information</option>
+                            <option value="baptism">Baptism</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="rcia">RCIA / Become Catholic</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="staff-section">
+                <h3 class="staff-title">Meet Our Staff</h3>
+
+                <h4 class="staff-category">Clergy</h4>
+                <div class="staff-grid">
+                    <div class="staff-card has-photo">
+                        <img src="images/22519494_10214535032520415_3324641879611067432_n.jpg" alt="Fr. Matthew Gill" class="staff-photo">
+                        <div class="staff-info">
+                            <h5>Fr. Matthew Gill</h5>
+                            <p class="staff-role">Pastor</p>
+                            <a href="mailto:frmgill@diocese-fr.org" class="staff-email">frmgill@diocese-fr.org</a>
+                        </div>
+                    </div>
+                    <div class="staff-card has-photo">
+                        <img src="images/frd.jpg" alt="Rev. Dave Marcham" class="staff-photo">
+                        <div class="staff-info">
+                            <h5>Rev. Dave Marcham</h5>
+                            <p class="staff-role">Visiting Priest</p>
+                            <a href="mailto:dmarcham@hcfm.org" class="staff-email">dmarcham@hcfm.org</a>
+                        </div>
+                    </div>
+                    <div class="staff-card has-photo">
+                        <img src="images/gingras_kevin02.jpg" alt="Rev. Mr. Kevin Gingras" class="staff-photo">
+                        <div class="staff-info">
+                            <h5>Rev. Mr. Kevin Gingras</h5>
+                            <p class="staff-role">Deacon</p>
+                            <a href="mailto:kpgingras@gmail.com" class="staff-email">kpgingras@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="staff-category">Parish Staff</h4>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <h5>Kellie-Jo Duarte</h5>
+                        <p class="staff-role">Director of Faith Formation</p>
+                        <p class="staff-phone">508-824-5707</p>
+                        <a href="mailto:DRE@holyfamilytaunton.org" class="staff-email">DRE@holyfamilytaunton.org</a>
+                    </div>
+                    <div class="staff-card">
+                        <h5>Therese Pond</h5>
+                        <p class="staff-role">Secretary</p>
+                        <a href="mailto:secretary@holyfamilytaunton.org" class="staff-email">secretary@holyfamilytaunton.org</a>
+                    </div>
+                    <div class="staff-card">
+                        <h5>Carol LaCourse</h5>
+                        <p class="staff-role">CORI Training & Renewals</p>
+                        <a href="mailto:cori@holyfamilytaunton.org" class="staff-email">cori@holyfamilytaunton.org</a>
+                    </div>
+                    <div class="staff-card">
+                        <h5>RoseMary Fletcher</h5>
+                        <p class="staff-role">Director of Music Ministries</p>
+                    </div>
+                    <div class="staff-card">
+                        <h5>Mary C. Anderson</h5>
+                        <p class="staff-role">Organist</p>
+                    </div>
+                    <div class="staff-card">
+                        <h5>Sarah Parker</h5>
+                        <p class="staff-role">Sacristan / Rectory Assistant</p>
+                    </div>
+                    <div class="staff-card">
+                        <h5>Dave LeClair</h5>
+                        <p class="staff-role">Maintenance</p>
+                    </div>
+                </div>
+
+                <h4 class="staff-category">Contact</h4>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <h5>Bulletin Information</h5>
+                        <a href="mailto:bulletin@holyfamilytaunton.org" class="staff-email">bulletin@holyfamilytaunton.org</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="logo-icon">&#10013;</span>
+                <span class="logo-text">Holy Family Parish</span>
+                <p>372 Middleboro Ave, East Taunton, MA 02718</p>
+                <p class="diocese">Diocese of Fall River</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="pages/im-new.html">I'm New</a></li>
+                    <li><a href="index.html#mass-times">Mass Times</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li><a href="pages/sacraments.html">Sacraments</a></li>
+                    <li><a href="pages/go-deeper.html">Go Deeper</a></li>
+                    <li><a href="pages/ministries.html">Ministries</a></li>
+                    <li><a href="pages/bulletins.html">Bulletins</a></li>
+                    <li><a href="index.html#give">Give</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="https://anchornews.org/" target="_blank" rel="noopener">The Anchor</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Ministries</h4>
+                <ul>
+                    <li><a href="pages/ministries.html#faith-formation">Faith Formation</a></li>
+                    <li><a href="pages/ministries.html#respect-life">Respect Life</a></li>
+                    <li><a href="pages/ministries.html#st-vincent-depaul">St. Vincent dePaul</a></li>
+                    <li><a href="pages/ministries.html#music-ministry">Music Ministry</a></li>
+                    <li><a href="pages/ministries.html#prayer-shawl">Prayer Shawl</a></li>
+                    <li><a href="pages/ministries.html#liturgical">Liturgical</a></li>
+                    <li><a href="pages/ministries.html#knights-of-columbus">Knights of Columbus</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/groups/453300811357774" aria-label="Facebook" target="_blank">&#102;</a>
+                </div>
+                <div class="flocknote">
+                    <p><strong>Flocknote:</strong> <a href="https://holyfamilychurch22.flocknote.com/dashboard" target="_blank" rel="noopener">Sign Up</a> or text HF619 to 84576</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Holy Family Parish. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
