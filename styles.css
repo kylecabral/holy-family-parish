@@ -1365,7 +1365,7 @@ blockquote cite {
 /* Contact Section */
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     gap: var(--space-2xl);
 }
 
@@ -1381,19 +1381,6 @@ blockquote cite {
     background-color: var(--color-bg-alt);
     padding: var(--space-lg);
     border-radius: var(--radius-md);
-}
-
-.contact-icon {
-    width: 48px;
-    height: 48px;
-    background-color: var(--color-primary);
-    color: white;
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    flex-shrink: 0;
 }
 
 .contact-item h4 {
@@ -1517,7 +1504,7 @@ blockquote cite {
     border-radius: var(--radius-sm);
     object-fit: cover;
     flex-shrink: 0;
-    border: 3px solid var(--color-primary);
+    border: 3px solid var(--color-border);
 }
 
 .staff-card .staff-info {
