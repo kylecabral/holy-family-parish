@@ -40,6 +40,11 @@ holy-family-parish/
 
 Run the build script to inject components (like the footer) into all HTML files:
 
+**Windows:**
+- Double-click `build.bat`, or
+- Run `node build.js` in terminal
+
+**Mac/Linux:**
 ```bash
 node build.js
 ```
