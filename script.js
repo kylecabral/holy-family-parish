@@ -399,176 +399,9 @@ window.addEventListener('resize', () => {
 createAnnouncementDots();
 startAnnouncementCarousel();
 
-// Calendar functionality
-const calendarContainer = document.getElementById('calendar-days');
-const calendarTitle = document.getElementById('calendar-month-year');
-const prevMonthBtn = document.getElementById('prev-month');
-const nextMonthBtn = document.getElementById('next-month');
-
-let currentDate = new Date();
-let displayMonth = currentDate.getMonth();
-let displayYear = currentDate.getFullYear();
-
-// Event data - dates with events (day of month)
-const eventData = {
-    '4-6-2026': {
-        title: 'First Friday Adoration',
-        time: '9:00 AM - 12:00 PM',
-        description: 'Join us for Eucharistic Adoration following the 8:00 AM Mass. A peaceful time for prayer and reflection in the presence of the Blessed Sacrament.'
-    },
-    '4-12-2026': {
-        title: 'Parish Fish Fry',
-        time: '5:00 PM - 7:30 PM',
-        description: 'Join us in the parish hall for our monthly community fish fry. All are welcome! Enjoy delicious fried fish, french fries, and fellowship. Free will offering accepted.'
-    },
-    '4-19-2026': {
-        title: 'Religious Education Registration',
-        time: 'After all Masses',
-        description: 'Register children for fall Religious Education classes in the parish hall. Programs available for grades K-8, including sacramental preparation for First Communion and Confirmation.'
-    },
-    '4-27-2026': {
-        title: 'Knights of Columbus Breakfast',
-        time: '8:00 AM - 11:00 AM',
-        description: 'Support our parish ministries while enjoying a delicious breakfast. Free will offering. All proceeds benefit parish ministries and community outreach programs.'
-    }
-};
-
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-                    'July', 'August', 'September', 'October', 'November', 'December'];
-
-function renderCalendar() {
-    if (!calendarContainer) return;
-
-    const firstDay = new Date(displayYear, displayMonth, 1);
-    const lastDay = new Date(displayYear, displayMonth + 1, 0);
-    const startingDay = firstDay.getDay();
-    const totalDays = lastDay.getDate();
-
-    // Update title
-    calendarTitle.textContent = `${monthNames[displayMonth]} ${displayYear}`;
-
-    // Clear previous days
-    calendarContainer.innerHTML = '';
-
-    // Add days from previous month
-    const prevMonthLastDay = new Date(displayYear, displayMonth, 0).getDate();
-    for (let i = startingDay - 1; i >= 0; i--) {
-        const dayEl = document.createElement('div');
-        dayEl.className = 'calendar-day other-month';
-        dayEl.textContent = prevMonthLastDay - i;
-        calendarContainer.appendChild(dayEl);
-    }
-
-    // Add days of current month
-    for (let day = 1; day <= totalDays; day++) {
-        const dayEl = document.createElement('div');
-        dayEl.className = 'calendar-day';
-        dayEl.textContent = day;
-
-        // Check if today
-        if (day === currentDate.getDate() &&
-            displayMonth === currentDate.getMonth() &&
-            displayYear === currentDate.getFullYear()) {
-            dayEl.classList.add('today');
-        }
-
-        // Check if has event
-        const eventKey = `${displayMonth + 1}-${day}-${displayYear}`;
-        if (eventData[eventKey]) {
-            dayEl.classList.add('has-event');
-            dayEl.style.cursor = 'pointer';
-            dayEl.addEventListener('click', () => showEventModal(eventKey));
-        }
-
-        calendarContainer.appendChild(dayEl);
-    }
-
-    // Add days from next month
-    const remainingDays = 42 - (startingDay + totalDays);
-    for (let i = 1; i <= remainingDays; i++) {
-        const dayEl = document.createElement('div');
-        dayEl.className = 'calendar-day other-month';
-        dayEl.textContent = i;
-        calendarContainer.appendChild(dayEl);
-    }
-}
-
-function prevMonth() {
-    displayMonth--;
-    if (displayMonth < 0) {
-        displayMonth = 11;
-        displayYear--;
-    }
-    renderCalendar();
-}
-
-function nextMonth() {
-    displayMonth++;
-    if (displayMonth > 11) {
-        displayMonth = 0;
-        displayYear++;
-    }
-    renderCalendar();
-}
-
-if (prevMonthBtn && nextMonthBtn) {
-    prevMonthBtn.addEventListener('click', prevMonth);
-    nextMonthBtn.addEventListener('click', nextMonth);
-}
-
-// Initialize calendar
-renderCalendar();
-
 // Modal functionality
 const eventModal = document.getElementById('event-modal');
 const modalClose = document.getElementById('modal-close');
-const modalDate = document.getElementById('modal-date');
-const modalTitle = document.getElementById('modal-title');
-const modalTime = document.getElementById('modal-time');
-const modalDescription = document.getElementById('modal-description');
-
-function showEventModal(eventKey) {
-    const event = eventData[eventKey];
-    if (!event) return;
-
-    // Parse the event key to get date
-    const [month, day, year] = eventKey.split('-');
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-                        'July', 'August', 'September', 'October', 'November', 'December'];
-
-    modalDate.textContent = `${monthNames[parseInt(month) - 1]} ${day}, ${year}`;
-    modalTitle.textContent = event.title;
-    modalTime.textContent = event.time;
-    modalDescription.textContent = event.description;
-
-    eventModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeEventModal() {
-    eventModal.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-if (modalClose) {
-    modalClose.addEventListener('click', closeEventModal);
-}
-
-if (eventModal) {
-    eventModal.addEventListener('click', (e) => {
-        if (e.target === eventModal) {
-            closeEventModal();
-        }
-    });
-}
-
-// Close modal on Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && eventModal && eventModal.classList.contains('active')) {
-        closeEventModal();
-    }
-});
-
 // Bulletin year toggle
 document.querySelectorAll('.bulletin-year-header').forEach(header => {
     header.addEventListener('click', () => {
@@ -576,3 +409,19 @@ document.querySelectorAll('.bulletin-year-header').forEach(header => {
         group.classList.toggle('collapsed');
     });
 });
+
+// Google Calendar theme based on browser preference
+function updateCalendarTheme() {
+    const calendar = document.getElementById('google-calendar');
+    if (!calendar) return;
+
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const baseUrl = 'https://calendar.google.com/calendar/u/0/embed?src=c_d158be754cd07057b26f07738ab260729dbad7ae92a80738b198fb323e345a77@group.calendar.google.com&ctz=America/New_York';
+    calendar.src = isDark ? baseUrl + '&theme=1' : baseUrl + '&theme=0';
+}
+
+// Initial theme set
+updateCalendarTheme();
+
+// Listen for theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateCalendarTheme);
