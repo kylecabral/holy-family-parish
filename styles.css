@@ -390,9 +390,80 @@ ul {
     width: 100%;
 }
 
-.nav-home-link {
-    font-weight: 600;
-    color: var(--color-primary) !important;
+/* Dropdown Navigation */
+.nav-links li.has-dropdown {
+    position: relative;
+}
+
+/* Invisible hover bridge to prevent gap issues */
+.nav-links li.has-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 15px;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    min-width: 200px;
+    background-color: var(--color-bg-alt);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-md);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-normal);
+    z-index: 100;
+    padding: var(--space-sm) 0;
+    list-style: none;
+    margin: 0;
+}
+
+/* Dropdown arrow pointer */
+.dropdown::before,
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    border: solid transparent;
+    border-width: 0 10px 10px 10px;
+}
+
+.dropdown::before {
+    border-bottom-color: var(--color-shadow);
+}
+
+.dropdown::after {
+    top: -9px;
+    border-bottom-color: var(--color-bg-alt);
+}
+
+.nav-links li.has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown li a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background-color var(--transition-fast);
+}
+
+.dropdown li a:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.dropdown li a::after {
+    display: none;
 }
 
 .mobile-menu-btn {
@@ -944,7 +1015,7 @@ ul {
 
 .bulletin-iframe {
     width: 100%;
-    height: 900px;
+    height: 925px;
     border: none;
     display: block;
 }
@@ -2208,6 +2279,22 @@ blockquote cite {
 
     .mobile-menu-btn {
         display: flex;
+    }
+
+    /* Mobile Dropdown Styles */
+    .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding: var(--space-xs) 0 var(--space-xs) var(--space-lg);
+        display: none;
+        background-color: transparent;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
     }
 
     .hero h1 {

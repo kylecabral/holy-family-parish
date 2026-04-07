@@ -17,6 +17,23 @@ if (mobileMenuBtn) {
     });
 }
 
+// Mobile Dropdown Toggle
+document.querySelectorAll('.has-dropdown > a').forEach(item => {
+    item.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const parent = item.parentElement;
+            parent.classList.toggle('open');
+            // Close other dropdowns
+            document.querySelectorAll('.has-dropdown.open').forEach(openItem => {
+                if (openItem !== parent) {
+                    openItem.classList.remove('open');
+                }
+            });
+        }
+    });
+});
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
